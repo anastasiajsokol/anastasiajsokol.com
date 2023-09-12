@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Anastasia J Sokol">
         <meta name="author" content="Anastasia J Sokol">
 
@@ -11,6 +11,7 @@
         <link rel="icon" href="favicon.png" type="image/png">
 
         <link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=EB%20Garamond' rel='stylesheet'>
         
         <style>
             * {
@@ -20,6 +21,7 @@
 
             body {
                 background: linear-gradient(to bottom right, #FFFB46, #F18F01);
+                font-family: Georgia, Times, 'Times New Roman', serif;
             }
 
             ::-webkit-scrollbar {
@@ -101,7 +103,7 @@
                 <style>
                     .intro .name {
                         position: absolute;
-                        top: 50%;
+                        top: 30%;
                         left: 50%;
                         margin-right: -50%;
                         transform: translate(-50%, -50%);
@@ -143,130 +145,69 @@
                 </script>
             </div>
             <div class="section about" id="about">
-                <style>
-                    .aboutgrid {
-                        position: relative;
-                        top: 50%;
-                        left: 50%;
-                        margin-right: -50%;
-                        transform: translate(-50%, -50%);
+                <div class="section about" id="about">
+                    <style>
+                        .about .title {
+                            padding-top: 10px;
+                            padding-left: 10px;
+                            font-size: 5em;
+                            font-family: Megrim, Arial, Helvetica, sans-serif;
+                        }
 
-                        width: 90vw;
-                        height: 80vh;
-                        height: calc(var(--vh, 1vh) * 80);
-
-                        display: flex;
-                        flex-wrap: wrap;
-                        flex-direction: column;
-
-                        background: none;
-                    }
-
-                    .aboutcard {
-                        background-color: #c5aded;
-                        border-radius: 20px;
-                        padding: 50px;
-
-                        width: fit-content;
-                        max-width: 60%;
-                        height: fit-content;
-
-                        font-size: xx-large;
-                    }
-
-                    @media all and (min-width: 800px){
-                        .aboutcard:nth-child(even) {
+                        .about .info {
+                            background-color: rgba(255, 255, 255, 0.7);
+                            vertical-align: middle;
+                            border-radius: 10px;
+                            width: fit-content;
+                            max-width: 90vw;
+                            margin-top: auto;
+                            margin-right: auto;
                             margin-left: auto;
-                            margin-top: auto;
-                        }
-                    }
-
-                    @media all and (max-width: 800px){
-                        .aboutgrid {
-                            height: 90vh;
-                            height: calc(var(--vh, 1vh) * 90);
-
-                            align-items: center;
-                            justify-content: center;
-                        }
-
-                        .aboutcard {
-                            width: 100%;
-                            font-size: 5vw;
-                        }
-
-                        .aboutcard:nth-child(even) {
-                            margin-top: auto;
-                        }
-                    }
-                </style>
-                
-                <div class="aboutgrid">
-                    <div class="aboutcard">
-                        <h4>Hi!</h4>
-                        <h4>I'm Anastasia &mdash; <grade id="grade">student</grade>, coder, scout, and CS lover. <age id="age"></age></h4>
-                    </div>
-                    <div class="aboutcard">
-                        <h4>I am passionate about education, computer science theory, universal algebra, and calculus.</h4>
-                    </div>
-                </div>
-
-                <script>
-                    const agebox = document.getElementById("age");
-                    const gradebox = document.getElementById("grade");
-                    
-                    function update_age(){
-                        let now = new Date();
-
-                        /** manage current age **/
-                        let birthday = new Date("2005-08-26T23:00:00.000Z"); // new Date("August 26, 2005 18:00:00 GMT-05:00");
-
-                        let age = now.getUTCFullYear() - birthday.getUTCFullYear(); // age assuming my birthday has happened this year
-
-                        birthday.setUTCFullYear(now.getUTCFullYear()); // switch birthday to current year
-
-                        if(now - birthday < 0){ // if the birthday has not yet happened
-                            --age;
-
-                            birthday.setUTCFullYear(now.getUTCFullYear() - 1); // ensure 'birthday' stores my last birthday
-                        }
-
-                        let ms = now - birthday; // ms since last birthday
-
-                        const ms_in_hour = 1000 * 60 * 60;
-                        const ms_in_day = ms_in_hour * 24;
-
-                        let days = Math.floor(ms / ms_in_day);
-
-                        let hours = Math.floor((ms - ms_in_day * days) / ms_in_hour);
-
-                        let yeartag = (age == 1) ? "year" : "years"; // I will never again be 1 year old... but just for fun
-                        let daytag = (days == 1) ? "day" : "days";
-                        let hourtag = (hours == 1) ? "hour" : "hours";
-
-                        agebox.innerHTML = `Currently I am ${age} ${yeartag}, ${days} ${daytag}, and ${hours} ${hourtag} old.`;
-
-                        let timetillupdate = new Date();
-                        timetillupdate.setHours(now.getHours() + 1, 0, 0, 0); // note that this does correctly handle overflow and sets minutes etc to 0
-                        
-                        timetillupdate = timetillupdate - now; // convert times to ms
-
-                        setTimeout(update_age, timetillupdate); // update at the next hour change
-
-                        /** manage update to student status **/
-                        const graduation = new Date("2023-05-25T20:00:00.000Z"); // new Date("May 25, 2023 15:00:00 GMT-05:00");
-                        if(graduation - now > 0){ // if graduation has not happened yet
-                            gradebox.innerHTML = "senior at RBHS";
+                            padding: 20px;
                             
-                            if(graduation - now < timetillupdate){
-                                // just ensure change happens (unlikely to trigger, even less likely to matter, but still)
-                                setTimeout(update_age, timetillupdate);
+                            font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
+                            font-size: 2em;
+                        }
+
+                        .about a {
+                            color: black;
+                        }
+
+                        @media only screen and (max-width: 600px){
+	                        .about .title {
+                                padding-top: 20px;
+                                padding-left: 0px;
+                                font-size: 3em;
+                                text-align: center;
+                            }
+
+                            .about .info {
+                                font-size: 1.2em;
                             }
                         }
-                    }
+                    </style>
+                    <h2 class="title">About</h2>
 
-                    update_age();
-                </script>
+                    <div class="info">
+                        <p>Hi! My name is Anastasia, I'm glad to get a chance to meet you.</p>
+                        <p>I am currently attending Colorado School of Mines as a sophmore studying Computer Science.</p>
+                        <p>In my free time I can often be found programming side projects, hiking with friends, or cooking a batch of curry.</p>
+                        <p>I am passionate about writing modular, composable code and many of my opinions on design are encapsulated by the language Rust and the <a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines</a>.</p>
+                        <p>Please <a id="projects_link" href="#">check out some of my projects</a> or <a id="contact_link" href="#">get in touch</a> if you have any questions.</p>
+                    </div>
+
+                    <script>
+                        document.getElementById("projects_link").addEventListener("click", event => {
+                            event.preventDefault();
+                            console.error("No projects page yet!");
+                        });
+
+                        document.getElementById("contact_link").addEventListener("click", event => {
+                            event.preventDefault();
+                            console.error("No contact page yet!");
+                        });
+                    </script>
+                </div>
             </div>
         </div>
         
