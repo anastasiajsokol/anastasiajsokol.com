@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Anastasia J Sokol">
+        <meta name="author" content="Anastasia J Sokol">
+
+        <title>Anastasia J Sokol</title>
+        <link rel="icon" href="favicon.png" type="image/png">
+
+        <link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=EB%20Garamond' rel='stylesheet'>
+
+        <script src="https://kit.fontawesome.com/c370bd345a.js" crossorigin="anonymous"></script>
+        
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                background: linear-gradient(to bottom right, #FFFB46, #F18F01);
+                font-family: Georgia, Times, 'Times New Roman', serif;
+            }
+
+            ::-webkit-scrollbar {
+                width: 0;
+                background: transparent;
+            }
+
+            .assets {
+                display: none;
+            }
+
+            .page {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                height: calc(var(--vh, 1vh) * 100);
+                scroll-behavior: smooth;
+                overflow: auto;
+                scroll-snap-type: y mandatory;
+            }
+
+            .section {
+                width: 100%;
+                height: 100vh;
+                height: calc(var(--vh, 1vh) * 100);
+                background-size:  cover;
+                scroll-snap-align: start;
+            }
+
+            .screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                height: calc(var(--vh, 1vh) * 100);
+                opacity: 0;
+            }
+
+            .fade {
+                animation: fadeIn 2s;
+                opacity: 1;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .title {
+                padding-top: 10px;
+                padding-left: 10px;
+                font-size: 5em;
+                font-family: Megrim, Arial, Helvetica, sans-serif;
+            }
+
+            @media only screen and (max-width: 600px){
+                .title {
+                    padding-top: 20px;
+                    padding-left: 0px;
+                    font-size: 3em;
+                    text-align: center;
+                }
+            }
+
+            a {
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="metavertex.glsl" type="glsl" id="meta_vert"></script>
+        <script src="metafragment.glsl" type="glsl" id="meta_frag"></script>
+
+        <div class="assets">
+            <img src="backgrounds/balloon/balloon.png" id="balloontexture">
+        </div>
+
+        <canvas class="screen" id="screen"></canvas>
+        <script src="background.js" type="module"></script>
+        <script>
+            // shadow implimentation, flushed out in background.js
+            window.background = {
+                _onloadqueue: [],
+
+                loaded: false,
+                next: undefined,
+                flipto: (pid) => { window.background.onload(() => window.background.flipto(pid)); },
+                onload: (fn) => { window.background._onloadqueue.push(fn); }
+            };
+        </script>
+
+        <div class="page" id="page">
+            <div class="section intro" id="intro">
+                <style>
+                    .intro .name {
+                        position: absolute;
+                        top: 30%;
+                        left: 50%;
+                        margin-right: -50%;
+                        transform: translate(-50%, -50%);
+                        
+                        font-family: Megrim, Arial, Helvetica, sans-serif;
+                        font-size: 10vw;
+                        font-weight: 600;
+                    }
+
+                    .intro .down {
+                        position: absolute;
+                        top: 90%;
+                        left: 50%;
+                        border: solid black;
+                        border-width: 0 0.5vw 0.5vw 0;
+                        display: inline-block;
+                        padding: 1vw;
+                        transform: rotate(45deg) translate(-50%, -50%);
+                        -webkit-transform: rotate(45deg) translate(-50%, -50%);
+                    }
+
+                    #intro_screen {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        height: calc(var(--vh, 1vh) * 100);
+                    }
+                </style>
+
+                <h1 class="name">Anastasia J Sokol</h1>
+                <div id="down"><i class="down"></i></div>
+                <script>
+                    document.getElementById("down").addEventListener("click", () => {
+                        document.getElementById("about").scrollIntoView(true);
+                    });
+                </script>
+            </div>
+            <div class="section about" id="about">
+                <div class="section about" id="about">
+                    <style>
+                        .about .info {
+                            background-color: rgba(255, 255, 255, 0.7);
+                            vertical-align: middle;
+                            border-radius: 10px;
+                            width: fit-content;
+                            max-width: 90vw;
+                            margin-top: auto;
+                            margin-right: auto;
+                            margin-left: auto;
+                            padding: 20px;
+                            
+                            font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
+                            font-size: 2em;
+                        }
+
+                        @media only screen and (max-width: 600px){
+                            .about .info {
+                                font-size: 1.5em;
+                            }
+                        }
+                    </style>
+                    <h2 class="title">About</h2>
+
+                    <div class="info">
+                        <p>Hi! My name is Anastasia, I'm glad to get a chance to meet you.</p>
+                        <p>I am currently attending Colorado School of Mines as a sophmore studying Computer Science.</p>
+                        <p>In my free time I can often be found programming side projects, hiking with friends, or cooking a batch of curry.</p>
+                        <p>I am passionate about writing modular, composable code and many of my opinions on design are encapsulated by the language Rust, Haskell, and the <a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines</a>.</p>
+                        <p>Please <a id="projects_link" href="#">check out some of my projects</a> and <a id="contact_link" href="#">get in touch</a>!</p>
+                    </div>
+
+                    <script>
+                        document.getElementById("projects_link").addEventListener("click", event => {
+                            event.preventDefault();
+                            document.getElementById("projects").scrollIntoView(true);
+                        });
+
+                        document.getElementById("contact_link").addEventListener("click", event => {
+                            event.preventDefault();
+                            document.getElementById("links").scrollIntoView(true);
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="section projects" id="projects">
+                <style>
+                    .projects .scrolling-wrapper {
+                        margin-top: 2em;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        
+                        scroll-behavior: smooth;
+                        overflow-x: scroll;
+                        scroll-snap-type: x mandatory;
+                    }
+
+                    .projects .card {
+                        flex: 0 0 auto;
+                        width: 100%;
+                        
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .projects .project {
+                        background-color: rgba(255, 255, 255, 0.7);
+                        padding: 20px;
+                        border-radius: 10px;
+                        width: 80%;
+
+                        display: flex;
+                        flex-direction: row;
+                    }
+
+                    .projects .name {
+                        font-size: 3em;
+                    }
+
+                    .projects p {
+                        font-size: 2em;
+                    }
+
+                    .projects .icon {
+                        margin-left: auto;
+                        height: 10em;
+                    }
+
+                    .projects .scrolling-wrapper {
+                        -webkit-overflow-scrolling: touch;
+                    }
+
+                    .go {
+                        font-size: 4em;
+                        margin-left: 1em;
+                        margin-right: 1em;
+                    }
+
+                    @media only screen and (max-width: 600px){
+                        .projects .scrolling-wrapper {
+                            margin-top: 0;
+                        }
+
+                        .projects .name {
+                            font-size: 1.3em;
+                        }
+
+                        .projects p {
+                            font-size: 1em;
+                        }
+                    }
+
+                    @media only screen and (max-width: 1100px){
+                        .projects .icon {
+                            display: none;
+                        }
+
+                        .go {
+                            display: none;
+                        }
+
+                        .projects .name {
+                            font-size: 1.8em;
+                        }
+
+                        .projects p {
+                            font-size: 1.4em;
+                        }
+                    }
+                </style>
+                <h2 class="title">Projects</h2>
+
+                <div class="scrolling-wrapper" id="project_container">
+                    <div class="card">
+                        <i class="fa-solid fa-circle-arrow-left go"></i>
+                        <div class="project">
+                            <div>
+                                <h2 class="name">StaticLock</h2>
+                                <p>StaticLock is an easy to use toolchain for creating password protected content (including webpages) without the use of a trusted oracle. This places less strain on hosting servers, allows for fast local static distribution mirrors, and makes your site virtually impossible to crack. The toolchain is still in active development so stay tuned for future updates and reach out if you have any interest in contributing!</p>
+                            </div>
+                            <a href="https://github.com/anastasiajsokol/StaticLock">
+                                <img class="icon" src="github.png">
+                            </a>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right go"></i>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-circle-arrow-left go"></i>
+                        <div class="project">
+                            <div>
+                                <h2 class="name">Fragment</h2>
+                                <p>Fragment is an interpeter for a new programming language of the same name. Made for a CSCI 200 final project at Colorado School of Mines the interpeter is written in C++17 and made of entirely composable components. With Polish notation expressions, first order functions, and a minimal standard library Fragment serves as a relatively minimal language with a functional paradigm. Future development is currently postponed but reach out if you are interested in new features!</p>
+                            </div>
+                            <a href="https://github.com/anastasiajsokol/Fragment">
+                                <img class="icon" src="github.png">
+                            </a>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right go"></i>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-circle-arrow-left go"></i>
+                        <div class="project">
+                            <div>
+                                <h2 class="name">Compassion UMC Website</h2>
+                                <p>Compassion United Methodist Church is "A Different Kind of Church" (it says so on their website!), combining worship and art the church doubles as an art gallery and community garden. The website is designed to reflect that duality and creative energy! Note that I do not speak on behalf of the church, if you have any questions about the church reach out to them and ask, if you have any questions about the website design <a href="#" id="contact_link_church">contact me</a> and ask!</p>
+                            </div>
+                            <a href="https://compassionumc.com/">
+                                <img class="icon" src="compassion.png">
+                            </a>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right go"></i>
+                    </div>
+                </div>
+                
+                <script>
+                    // contact link manager
+                    document.getElementById("contact_link_church").addEventListener("click", event => {
+                        event.preventDefault();
+                        document.getElementById("links").scrollIntoView(true);
+                    });
+
+                    // scroll manager
+                    const container = document.getElementById("project_container");
+                    let cards = [];
+                    let index = 0;
+
+                    function scroll(from, to){
+                        console.log(`Scrolling from ${from} to ${to}`)
+                        cards[to].scrollIntoView(true);
+                    }
+                    
+                    let length = container.children.length;
+                    for(let i = 0; i < length; ++i){
+                        const child = container.children[i];
+
+                        cards.push(child);
+
+                        for(const leftarrow of child.getElementsByClassName("fa-circle-arrow-left")){
+                            leftarrow.addEventListener("click", () => {
+                                scroll(i, (i - 1 + length) % length);
+                            });
+                        }
+
+                        for(const rightarrow of child.getElementsByClassName("fa-circle-arrow-right")){
+                            rightarrow.addEventListener("click", () => {
+                                scroll(i, (i + 1) % length);
+                            });
+                        }
+                    }
+                </script>
+            </div>
+            <div class="section links" id="links">
+                <style>
+                    .links .info {
+                            background-color: rgba(255, 255, 255, 0.7);
+                            vertical-align: middle;
+                            border-radius: 10px;
+                            width: fit-content;
+                            max-width: 90vw;
+                            margin-top: auto;
+                            margin-right: auto;
+                            margin-left: auto;
+                            padding: 20px;
+                            
+                            font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
+                            font-size: 2em;
+                        }
+                </style>
+                <h2 class="title">Links</h2>
+
+                <div class="info">
+                    <p>Let's get in touch!</p>
+                    <p>Email my gmail at anastasia.j.sokol, I will do my best to respond in a timely manner.</p>
+                    <p>In the meantime check out what I have been working on recently on <a href="https://github.com/anastasiajsokol">Github</a>.</p>
+                    <p>For more about my past work, skills, and alternative ways to contact me see my <a download href="resume.pdf">resume</a>.</p>
+                    <p>I hope we can talk soon!</p>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function scroll_snap_callback(container, callback){
+                //Timer, used to detect whether horizontal scrolling is over
+                var timer = null;
+                //Last rolling distance
+                var scrollLeft = 0, scrollTop = 0;
+                //Scrolling event start
+                container.addEventListener('scroll', function () {
+                    clearInterval(timer);
+                    //Renew timer
+                    timer = setInterval(function () {
+                        if (container.scrollLeft == scrollLeft && container.scrollTop == scrollTop) {
+                            //If the rolling distance is equal, the rolling stops
+                            clearInterval(timer);
+                            //call callback
+                            callback();
+                        } else {
+                            //Otherwise, remember the last scroll position
+                            scrollLeft = container.scrollLeft;
+                            scrollTop = container.scrollTop;
+                        }
+                    }, 100);
+                });
+            }
+
+            function scroll_snap_callback_with_element(container, callback){
+                scroll_snap_callback(container, () => {
+                    [].slice.call(container.children).forEach(function (ele, index) {
+                        const is_section = ele.tagName == "DIV" && ele.classList.contains("section");
+                        if(!is_section){
+                            console.warn("Element in incorrect scope:", ele);
+                            return;
+                        } else if (ele.getBoundingClientRect().top == 0) {
+                            callback(index);
+                            return;
+                        }
+                    });
+                });
+            }
+
+            scroll_snap_callback_with_element(document.getElementById("page"), (pid) => { window.background.flipto(pid); });
+        </script>
+
+        <script>
+            // dynamically set view height to match real view height (important for mobile devices - still not perfectly integrated with scrolling)
+            const set_global_vh = () => document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+            set_global_vh();
+            window.addEventListener("resize", set_global_vh);
+        </script>
+    </body>
+</html>
