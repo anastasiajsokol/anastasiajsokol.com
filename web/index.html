@@ -4,15 +4,57 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Anastasia J Sokol</title>
+        <link rel="icon" href="favicon.png" type="image/png">
         <style>
+            .darkmode {
+                background-color: #333;
+                color: white
+            }
+
+            .darkmode a {
+                color: #00ff55;
+            }
+
             .title {
-                margin-right: auto;
-                margin-left: auto;
+                text-align: center;
             }
         </style>
     </head>
-    <body>
+    <body class="darkmode">
         <h1 class="title">Anastasia J Sokol</h1>
         <hr>
+        <p>There also exists a more polished <a href="/gui">graphical version</a> of this site</p>
+
+        <div class="info">
+            <h2>About</h2>
+            <p>Hi! My name is Anastasia, I'm glad to get a chance to meet you.</p>
+            <p>I am currently attending Colorado School of Mines as a sophmore studying Computer Science.</p>
+            <p>In my free time I can often be found programming side projects, hiking with friends, or cooking a batch of curry.</p>
+            <p>I am passionate about writing modular, composable code and many of my opinions on design are encapsulated by Rust, Haskell, and the <a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines</a>.</p>
+        </div>
+
+        <div class="projects">
+            <h2>Projects</h2>
+            <h4>StaticLock</h4>
+            <p>StaticLock is an easy to use toolchain for creating password protected content (including webpages) without the use of a trusted oracle. This places less strain on hosting servers, allows for fast local static distribution mirrors, and makes your site virtually impossible to crack. The toolchain is still in active development so stay tuned for future updates and reach out if you have any interest in contributing!</p>
+            <p><a href="https://github.com/anastasiajsokol/StaticLock">Github repository</a></p>
+            <h4>Fragment</h4>
+            <p>Fragment is an interpeter for a new programming language of the same name. Made for a CSCI 200 final project at Colorado School of Mines the interpeter is written in C++17 and made of entirely composable components. With Polish notation expressions, first order functions, and a minimal standard library Fragment serves as a relatively minimal language with a functional paradigm. Future development is currently postponed but reach out if you are interested in new features!</p>
+            <p><a href="https://github.com/anastasiajsokol/Fragment">Github repository</a></p>
+            <h4>Compassion UMC Website</h4>
+            <p>Compassion United Methodist Church is "A Different Kind of Church" (it says so on their website!), combining worship and art the church doubles as an art gallery and community garden. The website is designed to reflect that duality and creative energy! Note that I do not speak on behalf of the church, if you have any questions about the church reach out to them and ask, if you have any questions about the website design contact me and ask!</p>
+            <p><a href="https://compassionumc.com">Website</a></p>
+        </div>
+
+        <div class="contact">
+            <h2>Contact</h2>
+            <p>Let's get in touch!</p>
+            <p>Email my gmail at anastasia.j.sokol, I will do my best to respond in a timely manner.</p>
+            <p>In the meantime check out what I have been working on recently on <a href="https://github.com/anastasiajsokol">Github</a>.</p>
+            <p>For more about my past work, skills, and alternative ways to contact me see my <a download href="resume.pdf">resume</a>.</p>
+            <p>I hope we can talk soon!</p>
+            <p>General purpose PGP public key: <a href="keys/anastasiajsokol.pubkey.asc">A45D7D419346AAB122965B60F328EBDE74496488</a></p>
+            <p>Mines PGP public key: <a href="keys/anastasia_at_mines.pubkey.asc">9DE5DC74198A2D38C1CFDF2C543D1DACD09E6877</a></p>
+        </div>
     </body>
 </html>
