@@ -8,14 +8,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="resources/bootstrap/bootstrap.min.css">
 
-    <!-- Title Information -->
+    <!-- Title information -->
     <link rel="icon" href="/favicon.png" type="image/png">
-    <title>Nature</title>
+    <title langtag="sitename">Nature</title>
+
+    <!-- Site Functionality -->
+    <script src="language/localize.js"></script>
   </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Nature</a>
+        <a class="navbar-brand" href="#" langtag="sitename">Nature</a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,26 +27,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#" langtag="navhome">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Gallery</a>
+                <a class="nav-link" href="#" langtag="navgallery">Gallery</a>
               </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Statistics And Observational Data</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" langtag="statisticsanddatacollection">Statistics And Observational Data</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Lookout Mountain</a>
+                <a class="dropdown-item" href="#" langtag="lookoutmountain">Lookout Mountain</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">About Data Collection</a>
+                <a class="dropdown-item" href="#" langtag="aboutdatacollection">About Data Collection</a>
               </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://www.anastasiajsokol.com/">About Anastasia</a>
-              </li>
+                <a class="nav-link" href="https://www.anastasiajsokol.com/" langtag="navabout">About Anastasia</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" langtag="navlanguage" langtag="navlanguage">Language</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="javascript:localize('en')">English</a>
+                <a class="dropdown-item" href="javascript:localize('ru')">Русский</a>
+                <a class="dropdown-item" href="javascript:localize('de')">Deutsch</a>
+              </div>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" langplaceholder="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" langtag="search">Search</button>
           </form>
         </div>
     </nav>

@@ -1,12 +1,35 @@
 {
     "en": {
-        "pagetitle": "Nature",
-        "bannertitle": "Lookout Mountain"
+        "sitename": "Nature",
+        "navhome": "Home",
+        "navgallery": "Gallery",
+        "navlanguage": "Language",
+        "navabout": "About Anastasia",
+        "search": "Search",
+        "statisticsanddatacollection": "Statistics and Data Collection",
+        "aboutdatacollection": "About Data Collection",
+        "lookoutmountain": "Lookout Mountain"
     },
     "ru": {
-        "pagetitle": "Природа"
+        "sitename": "Природа",
+        "navhome": "Главная",
+        "navgallery": "Галерея",
+        "navlanguage": "Язык",
+        "navabout": "об Анастасии",
+        "search": "Поиск",
+        "statisticsanddatacollection": "Статистика и Данные Наблюдений",
+        "aboutdatacollection": "О Сборе Данных",
+        "lookoutmountain": "Смотровая Гора"
     },
     "de": {
-        "pagetitle": "Natur"
+        "sitename": "Natur",
+        "navhome": "Home",
+        "navgallery": "Galerie",
+        "navlanguage": "Sprache",
+        "navabout": "Über Anastasia",
+        "search": "Suchen",
+        "statisticsanddatacollection": "Statistiken und Beobachtungsdaten",
+        "aboutdatacollection": "Über die Datenerfassung",
+        "lookoutmountain": "Aussichtsberg"
     }
 }
