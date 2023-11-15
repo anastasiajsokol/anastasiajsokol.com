@@ -14,6 +14,17 @@
 
     <!-- Site Functionality -->
     <script src="language/localize.js"></script>
+
+    <style>
+      #background {
+        position: fixed;
+        left: 0;
+        top: 0;
+        
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
@@ -60,6 +71,10 @@
           </form>
         </div>
     </nav>
+
+    <!-- Background -->
+    <canvas id="background"></canvas>
+    <script src="art/explore.js"></script>
 
     <!-- Home Page -->
     <div class="container p-4">

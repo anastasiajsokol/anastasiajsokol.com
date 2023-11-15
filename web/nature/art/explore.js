@@ -6,7 +6,7 @@ window.addEventListener("load", async _ => {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     const renderer = new THREE.WebGLRenderer({
-        canvas: document.getElementById("canvas")
+        canvas: document.getElementById("background")
     });
 
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -32,7 +32,7 @@ window.addEventListener("load", async _ => {
         plane.rotation.x = -Math.PI / 2;
 
         scene.add(plane);
-    };
+    }
 
     camera.position.z = 5;
     camera.position.y = 5;
