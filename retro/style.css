@@ -1,0 +1,52 @@
+* {
+    font-family: 'Ubuntu';
+}
+
+.darkmode {
+    background-color: #333;
+    background-image: url("images/bgstar.gif");
+    color: white
+}
+
+.darkmode a {
+    color: #00ff55;
+}
+
+.title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    background-image: linear-gradient(66deg, #c11a2b, #f15729, #a621e3, #21ade3, #0278bd, #21ade3, #a621e3, #f15729, #c11a2b);
+    font-family: arial black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+}
+
+.title .gnome {
+    transform: translateY(25%);
+    
+    margin-right: 10px;
+    margin-left: 10px;
+    
+    height: 100px;
+}
+
+@media (max-width: 400px) {
+    .title {
+        animation: rainbow-animation 300s linear infinite;
+    }
+}
+
+@media (min-width: 400px) {
+    .title {
+        animation: rainbow-animation 80s linear infinite;
+    }
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 4500vh;
+    }
+}
