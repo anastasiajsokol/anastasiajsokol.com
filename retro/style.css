@@ -3,13 +3,21 @@
 }
 
 .darkmode {
-    background-color: #333;
-    background-image: url("images/bgstar.gif");
+    background: url("images/bgstar.gif") #333;
     color: white
 }
 
 .darkmode a {
     color: #00ff55;
+}
+
+.darkmode .box {
+    border-radius: 10px;
+    
+    padding: 5px 20px;
+    margin: 10px;
+
+    color: black;
 }
 
 .title {
@@ -48,5 +56,32 @@
 @keyframes rainbow-animation {
     to {
         background-position: 4500vh;
+    }
+}
+
+.flash {
+    color: #a621e3;
+    animation: flash-animation 1500ms steps(2, jump-none) infinite;
+}
+
+@keyframes flash-animation {
+    0% {
+        color: #f15729;
+    }
+
+    25% {
+        color: #a621e3;
+    }
+    
+    50% {
+        color: #21ade3;
+    }
+
+    75% {
+        color: #a621e3;
+    }
+    
+    100% {
+        color: #f15729;
     }
 }
