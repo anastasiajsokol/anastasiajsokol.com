@@ -1,0 +1,24 @@
+:root {
+    --dark-orange-background: #D52D00;
+    --orange-background: #EF7627;
+    --light-orange-background: #FF9A56;
+    --dark-pink-background: #A30262;
+    --pink-background: #B55690;
+    --light-pink-background: #D162A4;
+    --text-color: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--orange-background);
+    color: var(--text-color);
+    max-width: 100vw;
+}
+
+.title {
+    text-align: center;
+}
