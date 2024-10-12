@@ -3,7 +3,4 @@
     <path d="M 10 90 L 50 10 L 90 90 Z" fill="#23423d"/>
     <path d="M 30 50 L 50 10 L 62 34 Z" fill="#fffafa"/>
     <path d="M 26 58 L 70 50 L 90 90 Z" fill="#26a660"/>
-    <text x="5" y="25" font-size="20px" font-family="Helvetica" fill="white">
-        &gt;A
-    </text>
 </svg>
