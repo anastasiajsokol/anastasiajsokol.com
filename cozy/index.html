@@ -5,11 +5,103 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="icon" href="https://www.anastasiajsokol.com/favicon.svg">
-        <title>Anastasia</title>
+        <title>Library of Anastasia</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/styles/index.css">
     </head>
     <body>
-        <h1 class="title">Hello World!</h1>
+        <div class="title">
+            <svg viewBox="0 0 126 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="
+                    M 12 22
+                    C 17.5228 22 22 17.5228 22 12
+                    C 22 11.5373 21.3065 11.4608 21.0672 11.8568
+                    C19.9289 13.7406 17.8615 15 15.5 15
+                    C 11.9101 15 9 12.0899 9 8.5
+                    C 9 6.13845 10.2594 4.07105 12.1432 2.93276
+                    C12.5392 2.69347 12.4627 2 12 2
+                    C 6.47715 2 2 6.47715 2 12
+                    C 2 17.5228 6.47715 22 12 22
+                    Z"
+                fill="#FFF700"/>
+                <text x="13" y="10" font-family="GomePixelRounded" font-size="10" fill="var(--header-color)">
+                    The Library of Anastasia
+                </text>
+            </svg>
+        </div>
+
+        <div class="mobile">
+            <div class="box">
+                <h2 class="header">Sitemap</h2>
+                <a href="javascript:void(0)" class="navicon" onclick="toggle_nav()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div id="mobile_navigator">
+                    <nav>
+                        <a href="#">Home</a>
+                        <a href="#">Journal</a>
+                        <a href="#">Library</a>
+                        <a href="#">Scrapbook</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Guestbook</a>
+                        <a href="#">Links</a>
+                    </nav>
+                </div>
+            </div>
+            <script>
+                const nav = document.getElementById("mobile_navigator");
+
+                function toggle_nav(){
+                    if(nav.style.display == "none"){
+                        nav.style.display = "block";
+                    } else {
+                        nav.style.display = "none";
+                    }
+                }
+            </script>
+        </div>
+
+        <section class="primary">
+            <div class="main">
+                <div class="box">
+                    <h2 class="header">Welcome to my library!</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <div class="side">
+                <div class="box sitemap">
+                    <h2 class="header">Sitemap</h2>
+                    <nav>
+                        <a href="#">Home</a>
+                        <a href="#">Journal</a>
+                        <a href="#">Library</a>
+                        <a href="#">Scrapbook</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Guestbook</a>
+                        <a href="#">Links</a>
+                    </nav>
+                </div>
+                <div class="box">
+                    <h2 class="header">Webrings</h2>
+                    <i>Currently not a part of any webrings</i>
+                </div>
+                <div class="box">
+                    <h2 class="header">Sites I like</h2>
+                    <div class="buttons">
+                        <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+                        <a href="https://thegardenofmadeline.neocities.org/"><img src="https://thegardenofmadeline.neocities.org/images/gardenofmadeline_sitebutton.gif"></a>
+                        <a href="https://theabsoluterealm.com"><img src="https://theabsoluterealm.com/buttons/absolute-realm.gif"></a>
+                    </div>
+                </div>
+                <div class="box">
+                    <h2 class="header">Current Music</h2>
+                    <i>Music? I have never heard of that!</i>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
