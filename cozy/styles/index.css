@@ -14,7 +14,7 @@
 }
 
 .primary {
-    width: 80vw;
+    width: var(--primary-width);
 
     margin-right: auto;
     margin-left: auto;
@@ -29,6 +29,7 @@ nav {
 }
 
 .primary .side {
+    /* TODO: what is up with this? */
     width: 100vw;
 }
 
@@ -101,7 +102,7 @@ nav {
     .mobile {
         display: block;
 
-        width: 80vw;
+        width: var(--primary-width);
 
         margin-right: auto;
         margin-left: auto;
@@ -121,3 +122,60 @@ nav {
         font-size: var(--normal-text);
     }
 }
+
+.footer {
+    width: var(--primary-width);
+
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+}
+
+.marquee {
+    position: relative;
+    left: 0;
+    top: 0;
+
+    width: var(--primary-width);
+
+    margin-right: auto;
+    margin-left: auto;
+
+    font-family: var(--monospace-font);
+
+    background-color: var(--box-color);
+    border-radius: var(--small-radius);
+
+    margin-bottom: var(--normal-gap);
+
+    overflow-x: hidden;
+}
+
+.marquee span {
+    padding: var(--normal-gap);
+
+    display: inline-block;
+    width: max-content;
+
+    padding-left: 100%;
+
+    /* show the marquee just outside the paragraph */
+    will-change: transform;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee span {
+      animation-iteration-count: 1;
+      animation-duration: 0.01; 
+
+      padding-left: 0;
+      width: auto;
+    }
+  }

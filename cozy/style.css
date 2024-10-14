@@ -19,6 +19,7 @@
 
     --default-font: Helvetica, Sans-Serif;
     --header-font: "GomePixelRounded", var(--default-font);
+    --monospace-font: Courier;
 
     --small-text: 0.5rem;
     --regular-text: 1rem;
@@ -37,6 +38,8 @@
     --small-gap: 5px;
     --normal-gap: 10px;
     --large-gap: 30px;
+
+    --primary-width: 80vw;
 }
 
 * {
