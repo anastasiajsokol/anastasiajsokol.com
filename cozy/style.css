@@ -52,3 +52,7 @@ body {
 
     font-family: var(--default-font);
 }
+
+a {
+    color: var(--link-color);
+}
