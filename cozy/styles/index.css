@@ -132,16 +132,14 @@ nav {
     text-align: center;
 }
 
-.marquee {
-    position: relative;
-    left: 0;
-    top: 0;
-
+.info {
     width: var(--primary-width);
 
     margin-right: auto;
     margin-left: auto;
+}
 
+.marquee {
     font-family: var(--monospace-font);
 
     background-color: var(--box-color);
@@ -178,4 +176,21 @@ nav {
       padding-left: 0;
       width: auto;
     }
-  }
+}
+
+.music {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin: var(--small-gap);
+}
+
+.music > .band {
+    width: 20%;
+    border-radius: var(--normal-radius);
+}
+
+.music > .song {
+    display: inline-block;
+}
