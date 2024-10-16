@@ -178,19 +178,7 @@ nav {
     }
 }
 
-.music {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    margin: var(--small-gap);
-}
-
-.music > .band {
-    width: 20%;
-    border-radius: var(--normal-radius);
-}
-
-.music > .song {
-    display: inline-block;
+.song {
+    font-family: var(--monospace-font);
+    text-align: center;
 }
