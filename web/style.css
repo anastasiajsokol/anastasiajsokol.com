@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --light-color: #ffcbd3;
+    --dark-color: #222;
+
+    --white-text-color: #e5e5e5;
+    --color-text-color: #ffc559;
+
+    --default-text-color: var(--white-text-color);
+    --title-text-color: var(--color-text-color);
+
+    --default-text-font: "Ubuntu", Helvetica, sans-serif;
+    --title-text-font: "Playfair Display", serif;
+
+    --page-margin: 8vw;
+
+    --paragraph-spacing: 1.5;
+    --spacing: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--light-color);
+
+    font-family: var(--default-text-font);
+    color: var(--white-text-color);
+
+    line-height: var(--paragraph-spacing);
+
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+}
+
+.content {
+    background: var(--dark-color);
+
+    width: calc(100vw - 2 * var(--page-margin));
+    margin: 0 auto;
+
+    padding: var(--spacing);
+}
+
+#title {
+    font-family: var(--title-text-font);
+    color: var(--title-text-color);
+
+    font-size: 2rem;
+
+    text-align: center;
+}
+
+a {
+    color: var(--title-text-color);
+}
+
+a.inactive {
+    text-decoration: line-through;
+}
+
+h2 {
+    margin-top: var(--spacing);
+}
+
+ul {
+    margin-left: 2rem;
+    list-style-type: "> ";
+}
+
+hr {
+    border: none;
+    border-top: 3px double #555;
+
+    overflow: visible;
+    text-align: center;
+    height: 1rem;
+
+    margin-top: var(--spacing);
+}
+
+hr::after {
+    background: var(--content-background);
+    color: var(--default-text-color);
+
+    content: "❤️";
+
+    position: relative;
+    top: -80%;
+}
