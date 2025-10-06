@@ -71,7 +71,7 @@ a.inactive {
     text-decoration: line-through;
 }
 
-h2 {
+h2, .section {
     margin-top: var(--spacing);
 }
 

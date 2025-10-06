@@ -23,6 +23,7 @@
 
             <p>Here for something else?</p>
             <ul>
+                <li><a class="inactive" href="/dsa">Data Structures and Algorithms Content</a></li>
                 <li><a href="https://stylized.anastasiajsokol.com/">Deprecated older version of this page</a></li>
                 <li><a href="https://sillyratcrayonbox.com/">Silly Rat Crayon Box</a></li>
                 <li><a href="/shrines">Shrines</a></li>
@@ -36,11 +37,13 @@
 
                 <p>
                     Yay I am so glad you are here! My name is Anastasia or Ana
-                    for short. This page is still a bit of a mess, and likely
-                    will be for a long time, but so am I so maybe it is really
-                    just peak design <span class="emoticon">:3</span> Currently
-                    I am studying computer science at Colorado School of Mines,
-                    and will hopefully start working towards a masters in STEM
+                    for short. I am <span id="age">an age</span> at the moment,
+                    which is really no time at all while also my whole life...
+                    This page is still a bit of a mess, and likely will be for
+                    a long time, but so am I so maybe it is really just peak
+                    design <span class="emoticon">:3</span> Currently I am
+                    studying computer science at Colorado School of Mines, and
+                    will hopefully start working towards a masters in STEM
                     education with a focus in computer science next semester!
                     (I still need to be approved, but it should work out) Aside
                     from computer science and education I have a bunch of random
@@ -53,14 +56,41 @@
                     even better a hobby you have that I do not) please
                     absolutely feel free to <a href="#contact">contact me!</a>
                 </p>
+
+                <script>
+                    const agebox = document.getElementById("age");
+
+                    // now you know my birthday too! :)
+                    const year = 2005; const month = 8; const day = 26;
+
+                    // how does that compare to now?
+                    // I am going to assume that your time zone is accurate
+                    // this matches how I personally celebrate my birthday too!
+                    // leap years are also weird, but this should solve that
+                    const now = new Date();
+
+                    const birthday_has_happened = month < (now.getMonth() + 1) || (month == (now.getMonth() + 1) && day < now.getDate());
+                    
+                    const age = now.getUTCFullYear() - year - !birthday_has_happened;
+
+                    // and finally save it back into the page!
+                    agebox.innerText = age;
+                </script>
             </div>
 
             <h2>About This Website</h2>
 
             <p>
-                Sorry this is still under construction! Hopefully new content
-                will be coming soon!
+                I am hardly a web design expert, nor do I have good taste,
+                however neither of those two things stop me from having strong
+                opinions about what I want my website to look like and more
+                importantly feel like. At this point you are probably thinking
+                that you should just skip this section, and I think you may be
+                right lest you fall into reading my poorly founded opinions
+                mwahahaha!
             </p>
+
+            <p>(ok ok but this will come later... so you win for now...)</p>
 
             <h2 id="contact">Contact</h2>
 
