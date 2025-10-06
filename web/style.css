@@ -1,16 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-    --light-color: #ffcbd3;
-    --dark-color: #222;
+    --deep-black: #111;
+    --orange: #ffc559;
+    --white: #e5e5e5;
+    --black: #222;
+    --grey: #555;
+    --pink: #ffcbd3;
+    --wine: #330611;
 
-    --white-text-color: #e5e5e5;
-    --color-text-color: #ffc559;
+    --background-color: var(--wine);
+    --foreground-color: var(--black);
+    --inset-color: var(--deep-black);
 
-    --default-text-color: var(--white-text-color);
-    --title-text-color: var(--color-text-color);
+    --emphasis-text-color: var(--orange);
+    --default-text-color: var(--white);
+    --dark-text-color: var(--grey);
 
-    --default-text-font: "Ubuntu", Helvetica, sans-serif;
+    --default-text-font: "Merriweather Sans", Helvetica, sans-serif;
     --title-text-font: "Playfair Display", serif;
 
     --page-margin: 8vw;
@@ -25,10 +32,10 @@
 }
 
 body {
-    background-color: var(--light-color);
+    background-color: var(--background-color);
 
     font-family: var(--default-text-font);
-    color: var(--white-text-color);
+    color: var(--default-text-color);
 
     line-height: var(--paragraph-spacing);
 
@@ -38,7 +45,7 @@ body {
 }
 
 .content {
-    background: var(--dark-color);
+    background: var(--foreground-color);
 
     width: calc(100vw - 2 * var(--page-margin));
     margin: 0 auto;
@@ -48,7 +55,7 @@ body {
 
 #title {
     font-family: var(--title-text-font);
-    color: var(--title-text-color);
+    color: var(--emphasis-text-color);
 
     font-size: 2rem;
 
@@ -56,7 +63,7 @@ body {
 }
 
 a {
-    color: var(--title-text-color);
+    color: var(--emphasis-text-color);
 }
 
 a.inactive {
@@ -69,12 +76,12 @@ h2 {
 
 ul {
     margin-left: 2rem;
-    list-style-type: "> ";
+    list-style-type: ">  ";
 }
 
 hr {
     border: none;
-    border-top: 3px double #555;
+    border-top: 3px double var(--dark-text-color);
 
     overflow: visible;
     text-align: center;
@@ -84,11 +91,21 @@ hr {
 }
 
 hr::after {
-    background: var(--content-background);
-    color: var(--default-text-color);
-
     content: "❤️";
 
     position: relative;
     top: -80%;
+}
+
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: end;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 0.25rem;
+    content: ">";
 }

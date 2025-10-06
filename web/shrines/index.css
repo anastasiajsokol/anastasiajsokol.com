@@ -1,0 +1,20 @@
+.grid {
+    margin-top: var(--spacing);
+
+    display: flex;
+}
+
+.card {
+    background-color: var(--inset-color);
+    border: solid 2px var(--pink);
+    padding: var(--spacing);
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.card img {
+    margin-top: var(--spacing);
+    width: 20vw;
+}
