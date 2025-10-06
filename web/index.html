@@ -21,15 +21,16 @@
 
             <hr/>
 
+            <!-- plenty of things outside of the homepage (thankfully) -->
             <p>Here for something else?</p>
             <ul>
                 <li><a class="inactive" href="/dsa">Data Structures and Algorithms Content</a></li>
                 <li><a href="https://stylized.anastasiajsokol.com/">Deprecated older version of this page</a></li>
-                <li><a href="https://sillyratcrayonbox.com/">Silly Rat Crayon Box</a></li>
                 <li><a href="/shrines">Shrines</a></li>
                 <li><a class="inactive" href="#">Links</a></li>
             </ul>
 
+            <!-- even better welcome to my page markup! -->
             <h2>Welcome To My Page</h2>
 
             <div class="block">
@@ -66,18 +67,19 @@
                     // how does that compare to now?
                     // I am going to assume that your time zone is accurate
                     // this matches how I personally celebrate my birthday too!
-                    // leap years are also weird, but this should solve that
+                    // leap years are also usually weird, but not here!
                     const now = new Date();
 
-                    const birthday_has_happened = month < (now.getMonth() + 1) || (month == (now.getMonth() + 1) && day < now.getDate());
+                    const happened = month < (now.getMonth() + 1) || (month == (now.getMonth() + 1) && day < now.getDate());
                     
-                    const age = now.getUTCFullYear() - year - !birthday_has_happened;
+                    const age = now.getUTCFullYear() - year - !happened;
 
                     // and finally save it back into the page!
                     agebox.innerText = age;
                 </script>
             </div>
 
+            <!-- I have opinions founded on truly nothing -->
             <h2>About This Website</h2>
 
             <p>
@@ -92,6 +94,7 @@
 
             <p>(ok ok but this will come later... so you win for now...)</p>
 
+            <!-- yeah but it actually would be great if you contacted me! -->
             <h2 id="contact">Contact</h2>
 
             <p>
