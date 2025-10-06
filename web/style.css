@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
     --deep-black: #111;
@@ -17,6 +17,7 @@
     --default-text-color: var(--white);
     --dark-text-color: var(--grey);
 
+    --emoticon-text-font: "Inter", Helvetica, sans-serif;
     --default-text-font: "Merriweather Sans", Helvetica, sans-serif;
     --title-text-font: "Playfair Display", serif;
 
@@ -108,4 +109,8 @@ hr::after {
     display: inline-block;
     margin: 0 0.25rem;
     content: ">";
+}
+
+.emoticon {
+    font-family: var(--emoticon-text-font);
 }

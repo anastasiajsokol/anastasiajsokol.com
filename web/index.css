@@ -1,0 +1,13 @@
+.block {
+    display: flow-root;
+}
+
+.block img:nth-of-type(even) {
+    margin-left: var(--spacing);
+    float: right;
+}
+
+.block img:nth-of-type(odd) {
+    margin-right: var(--spacing);
+    float: left;
+}
