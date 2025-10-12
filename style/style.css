@@ -22,7 +22,8 @@
 
     --page-margin: 8vw;
 
-    --paragraph-spacing: 1.5;
+    --paragraph-spacing: 1rem;
+    --line-spacing: 1.5;
     --spacing: 20px;
 }
 
@@ -37,7 +38,7 @@ body {
     font-family: var(--default-text-font);
     color: var(--default-text-color);
 
-    line-height: var(--paragraph-spacing);
+    line-height: var(--line-spacing);
 
     min-height: 100vh;
 
@@ -81,8 +82,18 @@ h2, .section {
     margin-top: var(--spacing);
 }
 
-ul, ol { margin-left: 2rem; }
-ul { list-style-type: ">  "; }
+p {
+    margin-top: var(--paragraph-spacing);
+}
+
+ul, ol {
+    margin-top: var(--paragraph-spacing);
+    margin-left: 2rem;
+}
+
+ul {
+    list-style-type: ">  ";
+}
 
 hr {
     border: none;
