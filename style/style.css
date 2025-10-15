@@ -20,6 +20,7 @@
     --default-text-font: "Merriweather Sans", Helvetica, sans-serif;
     --title-text-font: "Playfair Display", serif;
 
+    --content-width-limit: 95rem;
     --page-margin: 8vw;
 
     --paragraph-spacing: 1rem;
@@ -56,6 +57,7 @@ header, footer, body > section {
     background: var(--foreground-color);
 
     width: calc(100vw - 2 * var(--page-margin));
+    max-width: var(--content-width-limit);
 
     padding: 0 var(--spacing);
 }
