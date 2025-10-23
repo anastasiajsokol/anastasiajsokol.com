@@ -141,4 +141,8 @@ nav > ul > li:not(:last-child)::after {
     :root {
         --page-margin: 0vw;
     }
+
+    p, a {
+        word-break: break-all;
+    }
 }
