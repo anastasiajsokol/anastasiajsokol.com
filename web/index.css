@@ -11,3 +11,9 @@
     margin-right: var(--spacing);
     float: left;
 }
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+}
