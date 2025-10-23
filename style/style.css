@@ -54,6 +54,8 @@ body > *:first-child { padding-top: var(--spacing); }
 body > *:last-child { flex: 1; padding-bottom: var(--spacing); }
 
 header, footer, body > section {
+    box-sizing: border-box;
+
     background: var(--foreground-color);
 
     width: calc(100vw - 2 * var(--page-margin));
@@ -133,4 +135,10 @@ nav > ul > li:not(:last-child)::after {
     display: inline-block;
     margin: 0 0.25rem;
     content: "•";
+}
+
+@media only screen and (max-width: 45rem) {
+    :root {
+        --page-margin: 0vw;
+    }
 }
