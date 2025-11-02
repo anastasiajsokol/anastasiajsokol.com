@@ -82,6 +82,10 @@ a.inactive {
     color: var(--dark-text-color);
 }
 
+.strike {
+    text-decoration: line-through;
+}
+
 h2, .section {
     margin-top: var(--spacing);
 }
