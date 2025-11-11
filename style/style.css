@@ -50,8 +50,15 @@ body {
     align-items: center;
 }
 
-body > *:first-child { padding-top: var(--spacing); }
-body > *:last-child { flex: 1; padding-bottom: var(--spacing); }
+body > *:first-child {
+    padding-top: var(--spacing);
+}
+
+body > section:last-of-type {
+    /* I do not love this "solution" but it is the best I can do right now */
+    flex: 1;
+    padding-bottom: var(--spacing);
+}
 
 header, footer, body > section {
     box-sizing: border-box;
