@@ -26,50 +26,46 @@
         <section>
             <h2>Welcome To My Page</h2>
 
-            <div class="block">
-                <img class="inline" src="/index/welcome.gif" alt="Yippee welcome!">
+            <p>
+                Yay I am so glad you are here! My name is Anastasia or Ana
+                for short. I am <span id="age">an age</span> at the moment,
+                which is really no time at all while also my whole life...
+                This page is still a bit of a mess, and likely will be for
+                a long time, but I hope little by little it will all come
+                together <code>:3</code> Currently I am studying computer
+                science at Colorado School of Mines. I plan on graduating
+                with my bachlor's degree next May and then starting a
+                master's degree next August (hopefully I am accepted). Aside
+                from computer science and education I have a bunch of random
+                hobbies. Some of my favorites are hiking, backpacking,
+                anything at all related to snow, cooking, book binding,
+                reading fiction, and journaling. Really though those are
+                all the same thing in a convoluted sort of way. Like
+                everything in life, hobbies are best with other people, so
+                if you ever want to talk about one of the hobbies I have (or
+                even better a hobby you have that I do not) please
+                absolutely feel free to <a href="#contact">contact me</a>!
+            </p>
 
-                <p>
-                    Yay I am so glad you are here! My name is Anastasia or Ana
-                    for short. I am <span id="age">an age</span> at the moment,
-                    which is really no time at all while also my whole life...
-                    This page is still a bit of a mess, and likely will be for
-                    a long time, but so am I so maybe it is really just peak
-                    design <code>:3</code> Currently I am studying computer
-                    science at Colorado School of Mines. I plan on graduating
-                    with my bachlor's degree next May and then starting a
-                    master's degree next August (hopefully I am accepted). Aside
-                    from computer science and education I have a bunch of random
-                    hobbies. Some of my favorites are hiking, backpacking,
-                    anything at all related to snow, cooking, book binding,
-                    reading fiction, and journaling. Really though those are
-                    all the same thing in a convoluted sort of way. Like
-                    everything in life, hobbies are best with other people, so
-                    if you ever want to talk about one of the hobbies I have (or
-                    even better a hobby you have that I do not) please
-                    absolutely feel free to <a href="#contact">contact me!</a>
-                </p>
+            <script>
+                const agebox = document.getElementById("age");
 
-                <script>
-                    const agebox = document.getElementById("age");
+                // now you know my birthday too! :)
+                const year = 2005; const month = 8; const day = 26;
 
-                    // now you know my birthday too! :)
-                    const year = 2005; const month = 8; const day = 26;
+                // how does that compare to now?
+                // I am going to assume that your time zone is accurate
+                // this matches how I personally celebrate my birthday too!
+                // leap years are also usually weird, but not here!
+                const now = new Date();
 
-                    // how does that compare to now?
-                    // I am going to assume that your time zone is accurate
-                    // this matches how I personally celebrate my birthday too!
-                    // leap years are also usually weird, but not here!
-                    const now = new Date();
+                const happened = month < (now.getMonth() + 1) || (month == (now.getMonth() + 1) && day < now.getDate());
+                
+                const age = now.getUTCFullYear() - year - !happened;
 
-                    const happened = month < (now.getMonth() + 1) || (month == (now.getMonth() + 1) && day < now.getDate());
-                    
-                    const age = now.getUTCFullYear() - year - !happened;
-
-                    // and finally save it back into the page!
-                    agebox.innerText = age;
-                </script>
-            </div>
+                // and finally save it back into the page!
+                agebox.innerText = age;
+            </script>
         </section>
 
         <section>
