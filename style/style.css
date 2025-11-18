@@ -157,3 +157,14 @@ nav > ul > li:not(:last-child)::after {
         overflow-wrap: break-word;
     }
 }
+
+.breakout {
+    background-color: var(--deep-black);
+    margin-top: var(--spacing);
+    padding: var(--spacing);
+}
+
+.breakout > h3 {
+    font-style: italic;
+    font-size: inherit;
+}
