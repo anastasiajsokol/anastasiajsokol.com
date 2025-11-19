@@ -159,12 +159,17 @@ nav > ul > li:not(:last-child)::after {
 }
 
 .breakout {
-    background-color: var(--deep-black);
+    background-color: var(--inset-color);
     margin-top: var(--spacing);
     padding: var(--spacing);
 }
 
 .breakout > h3 {
+    margin-bottom: var(--paragraph-spacing);
     font-style: italic;
     font-size: inherit;
+}
+
+.breakout > p:first-of-type {
+    margin-top: 0;
 }

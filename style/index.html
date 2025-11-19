@@ -35,26 +35,30 @@
             you want it to just work and continue working then I recommend
             hosting a copy of any styles somewhere else.
         </p>
+    </section>
 
+    <section>
         <h2>Page Layout</h2>
 
         <p>
-            At the highest level, each page should be made up of three kinds of
+            At the highest level, each page should be made up of two kinds of
             tags. The <code>&lt;header&gt;</code> tag should be used for the
             title and any navigation elements. This can be followed by any
             number of <code>&lt;section&gt;</code> tags which contain the page
-            content (such as this). And finally a <code>&lt;footer&gt;</code>
-            tag may be placed at the very end.
+            content (such as this). Every page should contain at least one
+            <code>&lt;section&gt;</code> tag, both because a page without any
+            content has no reason to exist and because the styling depends a
+            bit on that being that case.
         </p>
 
         <p>
             While spacing should not usually be manually added or considered, it
             may be useful to note that the very first element (which should
             generally be a <code>&lt;header&gt;</code> but may be anything) will
-            recieve extra padding on the top, and the very last element (which
-            may again be anything) will both recieve extra padding on the bottom
-            and be stretched to fill the full page height if the content itself
-            does not take up the full view height.
+            recieve extra padding on the top, and the very last
+            <code>&lt;section&gt;</code> will both recieve extra padding on the
+            bottom and be stretched to fill the full page height if the content
+            itself does not take up the full view height.
         </p>
 
         <p>
@@ -67,8 +71,8 @@
             navigation are available.
         
             <ul>
-                <li>Ordered navigation (id est breadcrumbs)</li>
-                <li>Unordered navigation (id est site pages)</li>
+                <li>Ordered navigation (that is, breadcrumbs)</li>
+                <li>Unordered navigation (that is, site pages)</li>
             </ul>
         </p>
 
@@ -91,15 +95,9 @@
             which takes up more than the available space, put that element all
             on one line by itself within the markup.
         </p>
-        <p>
-            Not every page needs a <code>&lt;footer&gt;</code>, in fact most do
-            not in my opinion, but if you do have a usecase where a footer makes
-            sense then you can simply put the tag at the end of the document
-            and it should "just work." Since I do not consistently have use for
-            them there is currently no footer-specific styling (like laying
-            out links into columns) but this may come in the future.
-        </p>
+    </section>
 
+    <section>
         <h2>Variables</h2>
 
         <p>
@@ -172,8 +170,39 @@
             could be useful, I personally like it when things like padding and
             margins between elements are somewhat consistent.
         </p>
+    </section>
 
-        <h2>Further Sections Coming Soon</h2>
+    <section>
+        <h2>Special Elements &amp; Styles</h2>
+
+        <p>
+            These are miscellaneous items that may be used to provide somewhat
+            consistent components across pages.
+        </p>
+
+        <p>
+            The <span class="strike">strike</span> class can be added to mark
+            text as removed for some reason that retains value in still being a
+            part of the document. Keep in mind that by default this will still
+            be picked up by screen readers and text-based views of the page, so
+            do not necessarily depend on it to convery meaning. For links it is
+            better to use the <a href="#inactive" class="inactive">inactive</a>
+            class. Partially because it also changes the color, but also so that
+            the symantic meaning of the page is perserved.
+        </p>
+
+        <div class="breakout">
+            <h3>Breakout Boxes</h3>
+
+            <p>
+                Breakout boxes can be used to create seperate (though hopefully
+                related) content in context to a page or surrounding text. The
+                recommended structure is to use a <code>div.breakout</code> tag,
+                then within that place a <code>&lt;h3&gt;</code> tag for the
+                title and finally paragraphs for text. The title can be omitted
+                if not required within a given context.
+            </p>
+        </div>
     </section>
 </body>
 </html>
