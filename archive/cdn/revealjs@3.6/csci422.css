@@ -72,13 +72,9 @@ body {
     word-wrap: break-word
 }
 
-.reveal h1 {
+.reveal h1, .reveal h2 {
     font-size: 2.11em;
     color: var(--title-color);
-}
-
-.reveal h2 {
-    font-size: 2.11em;
 }
 
 .reveal h3 {
