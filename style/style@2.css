@@ -50,11 +50,11 @@ body > #content {
     align-items: center;
 }
 
-body > #content > *:first-child {
+body > #content > :first-child {
     padding-top: var(--spacing);
 }
 
-body > #content:last-child {
+body > #content > :last-child {
     padding-bottom: var(--spacing);
     flex: 1;
 }
