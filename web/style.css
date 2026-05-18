@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --blue: #00d5ff;
+    --red: #f6427e;
+    --yellow: #ffe066;
+
+    --default-text-font: "Outfit", sans-serif;
+    --default-text-size: 1rem;
+
+    --spacing: 20px;
+    --paragraph-spacing: 1rem;
+    --line-spacing: 1.5;
+
+    --title-text-size: 3rem;
+
+    --max-content-width: 1024px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/** Basic page elements **/
+
+#page {
+    max-width: var(--max-content-width);
+    margin-inline: auto;
+    padding-inline: var(--spacing);
+
+    padding-block: var(--spacing);
+
+    font-family: var(--default-text-font);
+    font-size: var(--default-text-size);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+header, #content, section {
+    margin-top: var(--spacing);
+}
+
+/** Subpage elements **/
+
+#title {
+    font-size: var(--title-text-size);
+    color: var(--red);
+}
+
+p {
+    margin-top: var(--paragraph-spacing);
+}
+
+ul, ol {
+    margin-top: var(--paragraph-spacing);
+    margin-left: 2rem;
+}
+
+ul {
+    list-style-type: ">  ";
+}
+
+/** Navigation links **/
+
+nav > ul {
+    list-style: none;
+    margin: 0;
+}
+
+nav > ul > li {
+    margin-top: var(--spacing);
+    border-bottom: 2px solid black;
+}
+
+nav > ul > li:hover {
+    background-color: var(--yellow);
+}
+
+nav > ul > li.active {
+    background-color: var(--blue);
+}
+
+nav > ul > li > a {
+    display: block;
+
+    text-decoration: none;
+    color: black;
+
+    padding: 5px;
+    padding-right: 20px;
+}
+
+/** Transform from mobile to desktop **/
+
+@media screen and (min-width: 1024px) {
+    header, #content {
+        flex-direction: row;
+    }
+
+    nav > ul {
+        min-width: 200px;
+    }
+
+    nav > ul > li {
+        border-bottom: 3px solid black;
+        border-right: 5px solid black;
+    }
+}
