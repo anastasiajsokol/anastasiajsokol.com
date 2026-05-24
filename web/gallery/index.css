@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: var(--spacing);
+    margin-top: var(--spacing);
 }
 
 #images > img {
