@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="/favicon.svg">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="page">
+        <header>
+            <h1 id="title">Gallery</h1>
+            <p><i>Bits of my life.</i></p>
+        </header>
+
+        <div id="content">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/edu/">Educational Resources</a></li>
+                    <li><a href="/pinyon/">Pinyon</a></li>
+                    <li><a href="/links/">Links</a></li>
+                    <li class="active"><a href="/gallery/">Gallery</a></li>
+                </ul>
+            </nav>
+
+            <main><div id="images">
+                <img src='images/sxQgr.jpg'/>
+                <img src='images/kyhms.jpg'/>
+                <img src='images/lsndz.jpg'/>
+                <img src='images/SfxQn.jpg'/>
+                <img src='images/FOOLV.jpg'/>
+                <img src='images/REWGp.jpg'/>
+                <img src='images/QECuD.jpg'/>
+                <img src='images/PscUq.jpg'/>
+                <img src='images/KIINa.jpg'/>
+                <img src='images/yCnZP.jpg'/>
+                <img src='images/zqQOC.jpg'/>
+                <img src='images/vwAWY.jpg'/>
+                <img src='images/ybaHM.jpg'/>
+                <img src='images/GWeAX.jpg'/>
+                <img src='images/seJxs.jpg'/>
+                <img src='images/DJRSW.jpg'/>
+                <img src='images/CANsy.jpg'/>
+                <img src='images/DKvJo.jpg'/>
+                <img src='images/QyrjH.jpg'/>
+                <img src='images/dzxYx.jpg'/>
+                <img src='images/EZGHW.jpg'/>
+                <img src='images/KcXrC.jpg'/>
+                <img src='images/yGWbc.jpg'/>
+                <img src='images/MKKvy.jpg'/>
+                <img src='images/WJwlc.jpg'/>
+                <img src='images/OceDL.jpg'/>
+                <img src='images/uJAEq.jpg'/>
+                <img src='images/Sglbp.jpg'/>
+                <img src='images/KDSXB.jpg'/>
+                <img src='images/oYYkZ.jpg'/>
+                <img src='images/UOToz.jpg'/>
+                <img src='images/jcFXH.jpg'/>
+                <img src='images/sOqJR.jpg'/>
+                <img src='images/veXZr.jpg'/>
+                <img src='images/ItAXp.jpg'/>
+                <img src='images/IZmVl.jpg'/>
+                <img src='images/TXgng.jpg'/>
+                <img src='images/ixaqs.jpg'/>
+                <img src='images/zyWER.jpg'/>
+                <img src='images/SzKUw.jpg'/>
+                <img src='images/AaNeA.jpg'/>
+                <img src='images/YxgbW.jpg'/>
+                <img src='images/YKZhR.jpg'/>
+                <img src='images/BmzAN.jpg'/>
+                <img src='images/fKPKp.jpg'/>
+                <img src='images/rrBQt.jpg'/>
+                <img src='images/oabxv.jpg'/>
+                <img src='images/XyMTH.jpg'/>
+                <img src='images/EudBr.jpg'/>
+                <img src='images/CVCIv.jpg'/>
+                <img src='images/ePAyH.jpg'/>
+                <img src='images/ImBQn.jpg'/>
+                <img src='images/pgBLu.jpg'/>
+                <img src='images/EcQVC.jpg'/>
+                <img src='images/jGKnf.jpg'/>
+                <img src='images/qWtWE.jpg'/>
+                <img src='images/VhFTr.jpg'/>
+                <img src='images/AtKtn.jpg'/>
+                <img src='images/AKhOH.jpg'/>
+                <img src='images/esakD.jpg'/>
+                <img src='images/MsyZQ.jpg'/>
+                <img src='images/LExfK.jpg'/>
+                <img src='images/FMFml.jpg'/>
+                <img src='images/qpOOH.jpg'/>
+            </div></main>
+
+            <script>
+                /**
+                 *  Replace static random order with dynamic random order
+                **/
+                function shuffle(array){
+                    for(let i = 0; i < array.length; ++i){
+                        let swapindex = Math.floor(Math.random() * array.length);
+                        let tmp = array[i]; array[i] = array[swapindex]; array[swapindex] = tmp;
+                    }
+                    return array;
+                }
+
+                const images = document.getElementById("images");
+
+                images.replaceChildren(...shuffle(new Array(...images.children)));
+            </script>
+        </div>
+    </div>
+</body>
+</html>

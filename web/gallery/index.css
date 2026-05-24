@@ -1,0 +1,19 @@
+#images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing);
+}
+
+#images > img {
+    width: 100%;
+}
+
+/** Transform from mobile to desktop **/
+
+@media screen and (min-width: 1024px) {
+    #images > img {
+        width: calc(33% - var(--spacing));
+    }
+}

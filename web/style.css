@@ -72,6 +72,11 @@ ul {
     list-style-type: ">  ";
 }
 
+a {
+    text-decoration: underline;
+    color: black;
+}
+
 /** Navigation links **/
 
 nav > ul {
