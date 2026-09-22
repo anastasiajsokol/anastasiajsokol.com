@@ -20,10 +20,10 @@
             <nav>
                 <ul>
                     <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/edu/">Educational Resources</a></li>
-                    <li><a href="/pinyon/">Pinyon</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                    <li><a href="/resume/">Résumé</a></li>
+                    <li><a href="/media/">Media</a></li>
                     <li><a href="/links/">Links</a></li>
-                    <li><a href="/gallery/">Gallery</a></li>
                 </ul>
             </nav>
 
@@ -43,10 +43,10 @@
                     <h2>Simple Biography</h2>
 
                     <ul>
+                        <li>Working on MSc in Computer Science (Colorado School of Mines)   </li>
                         <li>BSc in Computer Science (Colorado School of Mines)</li>
-                        <li>Working on MSc in Computer Science</li>
                         <li>Located in Golden Colorado</li>
-                        <li><span id="age">20</span> years old</li>
+                        <li><span id="age">21</span> years old</li>
                     </ul>
 
                     <script>
@@ -65,7 +65,7 @@
                             relativeTo: Temporal.PlainDate.from("2021-01-01"), // ISO 8601 calendar
                         }).years;
 
-                        const agebox = document.getElementById("age").innerText;
+                        const agebox = document.getElementById("age");
                         agebox.innerText = localage;
                     </script>
                 </section>
