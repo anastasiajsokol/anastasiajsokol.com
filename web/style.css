@@ -59,6 +59,24 @@ header, #content, section {
     color: var(--red);
 }
 
+ol#title {
+    list-style-type: none;
+    margin: 0;
+}
+
+ol#title li {
+    display: inline-block;
+}
+
+ol#title li:not(:last-child) {
+    display: none;
+    color: black;
+}
+
+ol#title li:not(:last-child)::after {
+    content: " >";
+}
+
 p {
     margin-top: var(--paragraph-spacing);
 }
@@ -110,6 +128,10 @@ nav > ul > li > a {
 /** Transform from mobile to desktop **/
 
 @media screen and (min-width: 1024px) {
+    ol#title li:not(:last-child) {
+        display: inline-block;
+    }
+
     header, #content {
         flex-direction: row;
     }
