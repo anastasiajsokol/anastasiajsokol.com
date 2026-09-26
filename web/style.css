@@ -15,6 +15,8 @@
     --title-text-size: 3rem;
 
     --max-content-width: 1024px;
+
+    --indent-margin: 2rem;
 }
 
 * {
@@ -83,7 +85,7 @@ p {
 
 ul, ol {
     margin-top: var(--paragraph-spacing);
-    margin-left: 2rem;
+    margin-left: var(--indent-margin);
 }
 
 ul {

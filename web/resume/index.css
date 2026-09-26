@@ -1,0 +1,11 @@
+details > * {
+    margin-top: 0;
+}
+
+details > p {
+    margin-left: var(--indent-margin);
+}
+
+details > summary > time, details > summary > span {
+    float: right;
+}
